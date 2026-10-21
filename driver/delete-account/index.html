@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Delete your Nitro driver account." />
+    <title>Nitro Account Deletion</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="card" aria-labelledby="page-title">
+        <p class="eyebrow">Nitro</p>
+        <h1 id="page-title">Delete your Nitro account</h1>
+        <p class="intro">
+          You can delete your Nitro account in the app. If Nitro is no longer
+          installed, you can use this page instead.
+        </p>
+
+        <div class="notice">
+          <strong>Before you continue</strong>
+          <p>
+            This permanently deletes the Firebase account you sign in with and
+            cannot be undone. Data saved only on a phone can be cleared only
+            from that phone.
+          </p>
+        </div>
+
+        <div id="configuration-warning" class="message message-error" hidden>
+          This deletion page is not configured yet. Please use the in-app
+          deletion option or try again later.
+        </div>
+
+        <div id="signed-out-panel">
+          <button id="sign-in-button" class="button button-primary" type="button">
+            Continue with Google
+          </button>
+          <p class="helper">
+            Sign in only with the Google account you want to delete. Nitro does
+            not receive or store your Google password.
+          </p>
+        </div>
+
+        <div id="signed-in-panel" hidden>
+          <p class="signed-in-as">Signed in as <strong id="account-email"></strong></p>
+          <p>
+            Confirming below deletes only this currently signed-in Firebase
+            account. It does not delete another Google account.
+          </p>
+          <div class="actions">
+            <button id="cancel-button" class="button button-secondary" type="button">
+              Cancel
+            </button>
+            <button id="delete-button" class="button button-danger" type="button">
+              Delete account
+            </button>
+          </div>
+          <button id="sign-out-button" class="link-button" type="button">
+            Sign out
+          </button>
+        </div>
+
+        <div id="message" class="message" role="status" aria-live="polite" hidden></div>
+      </section>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+    <script src="./firebase-config.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
